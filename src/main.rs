@@ -1,7 +1,16 @@
-fn main() {
-    println!("{}", area((30, 50)));
+struct Cubox {
+    width: u32,
+    length: u32,
 }
 
-fn area(dim:(u32, u32)) -> u32 {
-    dim.0 * dim.1
+fn main() {
+    let rect = Cubox {
+        width: 30,
+        length: 50,
+    };
+    println!("{}", area(&rect));
+}
+
+fn area(rect: &Cubox) -> u32 {
+    rect.width * rect.length
 }
