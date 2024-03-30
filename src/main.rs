@@ -1,7 +1,7 @@
 fn main() {
-    println!("{}", area(30, 50));
+    println!("{}", area((30, 50)));
 }
 
-fn area(witdh: u32, length: u32) -> u32 {
-    witdh * length
+fn area(dim:(u32, u32)) -> u32 {
+    dim.0 * dim.1
 }
