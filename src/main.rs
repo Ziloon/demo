@@ -11,6 +11,12 @@ impl Cubox {
     fn can_hold(&self, other: &Cubox) -> bool {
         self.width >= other.width && self.length >= other.length
     }
+    fn square(size: u32) -> Cubox {
+        Cubox {
+            width: size,
+            length: size,
+        }
+    }
 }
 fn main() {
     let rect1 = Cubox {
@@ -23,6 +29,9 @@ fn main() {
         width: 30,
         length: 50,
     };
-    println!("{}", rect1.can_hold(&rect2))
+    println!("{}", rect1.can_hold(&rect2));
+    let sq = Cubox::square(50);
+    println!("{}", sq.can_hold(&rect2));
+    println!("{}", rect2.can_hold(&sq));
 }
 
