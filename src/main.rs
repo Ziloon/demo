@@ -4,15 +4,17 @@ struct Cubox {
     length: u32,
 }
 
+impl Cubox {
+    fn area(&self) -> u32 {
+        self.width * self.length
+    }
+}
 fn main() {
     let rect = Cubox {
         width: 30,
         length: 50,
     };
-    println!("{}", area(&rect));
+    println!("{}", rect.area());
     println!("{:#?}", rect);
 }
 
-fn area(rect: &Cubox) -> u32 {
-    rect.width * rect.length
-}
